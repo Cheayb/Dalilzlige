@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دليلي - دليل الزليج للمبتدئين</title>
+  <style>
+    * { box-sizing: border-box; font-family: Tahoma, Arial, sans-serif; }
+    body { margin: 0; background: #f3f4f6; color: #1f2937; padding-bottom: 72px; }
+    header { background: #0f766e; color: #fff; padding: 18px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+    header h1 { margin: 0; font-size: 20px; }
+    header p { margin: 6px 0 0; font-size: 13px; opacity: 0.92; }
+    .container { padding: 14px; max-width: 640px; margin: auto; }
+    .card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .card h2 { margin-top: 0; font-size: 17px; color: #0f766e; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; }
+    .card ul { padding-right: 18px; margin: 8px 0; line-height: 1.75; font-size: 14px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    label { display: block; margin: 10px 0 4px; font-weight: bold; font-size: 14px; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; background: #fff; }
+    button.calc-btn { width: 100%; background: #0f766e; color: #fff; border: none; padding: 12px; border-radius: 8px; font-size: 16px; margin-top: 14px; cursor: pointer; font-weight: bold; }
+    .result-box { background: #ecfdf5; border: 1px solid #10b981; padding: 12px; border-radius: 8px; margin-top: 12px; font-size: 14px; line-height: 1.85; display: none; }
+    nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; border-top: 1px solid #d1d5db; z-index: 10; }
+    nav button { flex: 1; padding: 12px 6px; border: none; background: none; font-size: 13px; font-weight: bold; color: #4b5563; cursor: pointer; }
+    nav button.active { color: #0f766e; border-top: 3px solid #0f766e; background: #f0fdfa; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>دليلي - دليل الزليج للمبتدئين</h1>
+  <p>أساسيات الحرفة، الأدوات، الفورمة والميول، وحاسبة المواد</p>
+</header>
+
+<div class="container">
+  <div id="lessons" class="tab-content active">
+    <div class="card">
+      <h2>1. أنواع الزليج والمواد اللاصقة</h2>
+      <ul>
+        <li><strong>السيراميك:</strong> مناسب للجدران الداخلية، سهل القص، ويُركّب بالكولا المناسبة (C1) أو المونة حسب القاعدة.</li>
+        <li><strong>البورسلان (Gres):</strong> صلب وقليل الامتصاص للماء، مثالي للأرضيات والواجهات، ويُفضّل معه <strong>كولا C2</strong> ذات تماسك أعلى.</li>
+        <li><strong>الزليج البلدي والرخام:</strong> يتطلب ضبطاً دقيقاً للشرب والميزان واختيار مادة التثبيت والجوان المناسبة لطبيعة الحبة والمكان.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. الأدوات الأساسية في الورشة</h2>
+      <ul>
+        <li><strong>الملاسة المسننة (Peigne):</strong> لتوزيع الكولا بسمك منتظم وتقليل الفراغات الهوائية تحت الحبة.</li>
+        <li><strong>ميزان الماء وميزان الخيط:</strong> للتحقق من الاستقامة والشاقولية وتوحيد المستويات.</li>
+        <li><strong>الكرويصات (Spacers):</strong> لضبط عرض الفواصل بين الحبات بشكل متساوٍ.</li>
+        <li><strong>أدوات القص والقياس:</strong> قاطعة الزليج اليدوية، صاروخ القص للزوايا والفتحات (فوسيكير)، والمتر.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. خطوات الفورمة والتركيب والميول</h2>
+      <ul>
+        <li><strong>تنظيف وتهيئة السطح:</strong> إزالة الأتربة والأجزاء المفككة وترطيب السطح باعتدال قبل العمل.</li>
+        <li><strong>أخذ الشرب والميزان:</strong> تحديد مستوى مرجعي واضح قبل البدء حتى لا تتراكم الفروق في نهاية الصفوف.</li>
+        <li><strong>ميول التصريف:</strong> في الحمامات والسطوح والأفنية يُضبط الميل بوضوح باتجاه مجرى الصرف لتفادي تجمع الماء.</li>
+        <li><strong>التفراغ (Joint):</strong> بعد جفاف اللاصق للمدة الموصى بها، تُملأ الفواصل جيداً وتُنظف قبل تصلبها.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="calculator" class="tab-content">
+    <div class="card">
+      <h2>حاسبة الزليج والكولا</h2>
+      <label for="length">الطول (بالمتر):</label>
+      <input type="number" id="length" step="0.01" placeholder="مثال: 4.5" />
+
+      <label for="width">العرض (بالمتر):</label>
+      <input type="number" id="width" step="0.01" placeholder="مثال: 3.2" />
+
+      <label for="waste">نسبة الزيادة للقص والضياع:</label>
+      <select id="waste">
+        <option value="1.10">10% (تركيب مستقيم عادي)</option>
+        <option value="1.15">15% (زوايا متعددة أو قص إضافي)</option>
+      </select>
+
+      <label for="boxArea">مساحة الكرتونة الواحدة (م²):</label>
+      <input type="number" id="boxArea" step="0.01" value="1.44" />
+
+      <button type="button" class="calc-btn" onclick="calculate()">احسب الكمية المطلوبة</button>
+
+      <div id="result" class="result-box"></div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <button type="button" class="active" onclick="switchTab('lessons', this)">الدروس والأساسيات</button>
+  <button type="button" onclick="switchTab('calculator', this)">حاسبة المواد</button>
+</nav>
+
+<script>
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(function (el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('nav button').forEach(function (el) {
+      el.classList.remove('active');
+    });
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function calculate() {
+    var l = parseFloat(document.getElementById('length').value);
+    var w = parseFloat(document.getElementById('width').value);
+    var waste = parseFloat(document.getElementById('waste').value);
+    var box = parseFloat(document.getElementById('boxArea').value) || 1;
+
+    if (!l || !w || l <= 0 || w <= 0) {
+      alert('المرجو إدخال الطول والعرض بشكل صحيح');
+      return;
+    }
+
+    var netArea = l * w;
+    var totalArea = netArea * waste;
+    var boxes = Math.ceil(totalArea / box);
+    var glueBags = Math.ceil(totalArea / 4.5);
+
+    var res = document.getElementById('result');
+    res.style.display = 'block';
+    res.innerHTML =
+      '<strong>المساحة الصافية:</strong> ' + netArea.toFixed(2) + ' م²<br>' +
+      '<strong>المساحة مع الزيادة:</strong> ' + totalArea.toFixed(2) + ' م²<br>' +
+      '<strong>عدد الكرتونات المطلوبة:</strong> ' + boxes + ' كرتونة<br>' +
+      '<strong>تقدير أكياس الكولا (25 كغ):</strong> حوالي ' + glueBags + ' كيس';
+  }
+</script>
+</body>
+</html>
